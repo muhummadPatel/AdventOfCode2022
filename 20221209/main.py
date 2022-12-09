@@ -7,7 +7,6 @@ def read_input(filepath):
         return [(cmd[0].upper(), int(cmd[1])) for cmd in commands]
 
 
-
 def follow_head(head, tail):
     x1, y1 = head
     x2, y2 = tail
@@ -15,18 +14,6 @@ def follow_head(head, tail):
     dist = int(math.sqrt(math.pow(d_x, 2) + math.pow(d_y, 2)))
 
     if dist > 1:  # not adjacent
-        # try:
-        #     x_dir = -1 if d_x > 0 else 1
-        #     mv_x = int(x_dir * (d_x / d_x))
-        # except ZeroDivisionError:
-        #     mv_x = 0
-
-        # try:
-        #     y_dir = -1 if d_y > 0 else 1
-        #     mv_y = int(y_dir * (d_y / d_y))
-        # except ZeroDivisionError:
-        #     mv_y = 0
-        # return (tail[0] + mv_x, tail[1] + mv_y)
         if d_x > 0 and d_y > 0:  # top right
             new_tail = (x2 + 1, y2 + 1)
         elif d_x < 0 and d_y > 0:  # top left
